@@ -1,6 +1,3 @@
-/**
- * @todo desc
- */
 const ENUMS = (function() {
   /**
    * Material icons used throughout the project
@@ -39,16 +36,17 @@ const ENUMS = (function() {
    */
   const Exercise = {
     // CARDIO
-    ELLIPTICAL_WARMUP: "Elliptical, Warmup",
-    ELLIPTICAL_INTERVAL: "Elliptical, Intervals",
-    STAIR_STEPPER: "Stair Stepper Machine",
+    ELLIPTICAL_MACHINE: "Elliptical Machine",
+    STEPPER_MACHINE: "Stepper Machine",
+    TREADMILL: "Treadmill",
+    MISC_CARDIO: "Miscellaneous Cardio",
     // MISC
     MISC_EXERCISE: "Miscellaneous Exercise",
     STRETCHING: "Stretching",
     // CHEST
-    SMITH_FLAT_BENCH_PRESS: "Smith Flat Bench Press",
-    SMITH_INCLINE_BENCH_PRESS: "Smith Incline Bench Press",
-    SMITH_DECLINE_BENCH_PRESS: "Smith Decline Bench Press",
+    FLAT_BENCH_PRESS: "Flat Bench Press",
+    INCLINE_BENCH_PRESS: "Incline Bench Press",
+    DECLINE_BENCH_PRESS: "Decline Bench Press",
     DUMBBELL_FLAT_BENCH_PRESS: "Dumbbell Flat Bench Press",
     DUMBBELL_INCLINE_BENCH_PRESS: "Dumbbell Incline Bench Press",
     DUMBBELL_DECLINE_BENCH_PRESS: "Dumbbell Decline Bench Press",
@@ -66,9 +64,9 @@ const ENUMS = (function() {
     CABLE_TRICEP_PULLDOWNS: "Cable Tricep Pulldowns",
     TRICEP_PRESS_MACHINE: "Tricep Press Machine",
     // BACK
-    SMITH_BENT_OVER_ROWS: "Smith Bent Over Rows",
-    SMITH_SHRUGS: "Smith Shrugs",
-    SMITH_STIFF_LEG_DEADLIFTS: "Smith Stiff Leg Deadlift",
+    BENT_OVER_ROWS: "Bent Over Rows",
+    SHRUGS: "Shrugs",
+    STIFF_LEG_DEADLIFTS: "Stiff Leg Deadlift",
     ASSISTED_PULL_UPS: "Assisted Pull-ups",
     SEATED_CABLE_PULLDOWNS: "Seated Cable Pulldowns",
     SEATED_CABLE_ROWS: "Seated Cable Rows",
@@ -100,3 +98,5 @@ const ENUMS = (function() {
     Exercise
   }
 })();
+
+export default ENUMS;
