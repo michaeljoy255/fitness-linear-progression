@@ -1,17 +1,6 @@
 import ENUMS from './enums';
-const uuid = require("uuid");
 
-const SeedData = (function() {
-  class Profile {
-    constructor({
-      exercises = [],
-      routines = []
-    }={}) {
-      this.exercises = exercises;
-      this.routines = routines;
-    }
-  }
-  
+const SeedData = (function() {  
   class Exercise {
     constructor({
       name = null,
@@ -19,7 +8,6 @@ const SeedData = (function() {
       desc = null,
       details = null
     }={}) {
-      this.id = uuid.v4();
       this.name = name;
       this.category = category;
       this.desc = desc;
@@ -67,11 +55,10 @@ const SeedData = (function() {
   class Routine {
     constructor({
       name = null,
-      exercise_ids = []
+      exercise_names = []
     }={}) {
-      this.id = uuid.v4();
       this.name = name;
-      this.exercise_ids = exercise_ids;
+      this.exercise_names = exercise_names;
     }
   }
 
@@ -80,7 +67,11 @@ const SeedData = (function() {
       name: ENUMS.Exercise.ELLIPTICAL_MACHINE,
       category: ENUMS.Category.CARDIO,
       desc: "pending",
-      details: new CardioExerciseDetails()
+      details: new CardioExerciseDetails({
+        previous_cardio_date: null,
+        previous_duration: null,
+        previous_dist_steps: null
+      })
     }),
     new Exercise({
       name: ENUMS.Exercise.STEPPER_MACHINE,

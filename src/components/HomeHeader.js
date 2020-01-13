@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class MainHeader extends Component {
+class HomeHeader extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Main Header!</h1>
+        <h1>Home Header!</h1>
       </div>
     );
   }
 }
 
-export default MainHeader;
+export default HomeHeader;

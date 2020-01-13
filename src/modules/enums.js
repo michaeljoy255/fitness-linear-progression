@@ -32,9 +32,14 @@ const ENUMS = (function() {
   }
 
   /**
-   * All available exercise names
+   * All available exercises
    */
   const Exercise = {
+    EXAMPLE_EXERCISE: {
+      name: "Example Exercise",
+      category: Category.MISC,
+      desc: "Just an example to work from!"
+    },
     // CARDIO
     ELLIPTICAL_MACHINE: "Elliptical Machine",
     STEPPER_MACHINE: "Stepper Machine",

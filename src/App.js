@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MainHeader from './components/MainHeader'
+import HomeHeader from './components/HomeHeader'
 import Routines from './components/Routines'
 import './App.css';
 
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>App!</h1>
-        <MainHeader />
+        <HomeHeader />
         <Routines />
       </div>
     );
