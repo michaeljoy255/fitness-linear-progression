@@ -33,67 +33,342 @@ const ENUMS = (function() {
 
   /**
    * All available exercises
+   * @todo IDs are Hard coded to prevent issues with local storage ATM
    */
   const Exercise = {
-    EXAMPLE_EXERCISE: {
-      name: "Example Exercise",
-      category: Category.MISC,
-      desc: "Just an example to work from!"
+    // CARDIO ------------------------------------------------------------------
+    MISC_CARDIO: {
+      id: "cardio_001", 
+      name: "Miscellaneous Cardio",
+      category: Category.CARDIO,
+      notes: "For miscellaneous cardio exercises."
     },
-    // CARDIO
-    ELLIPTICAL_MACHINE: "Elliptical Machine",
-    STEPPER_MACHINE: "Stepper Machine",
-    TREADMILL: "Treadmill",
-    MISC_CARDIO: "Miscellaneous Cardio",
-    // MISC
-    MISC_EXERCISE: "Miscellaneous Exercise",
-    STRETCHING: "Stretching",
-    // CHEST
-    FLAT_BENCH_PRESS: "Flat Bench Press",
-    INCLINE_BENCH_PRESS: "Incline Bench Press",
-    DECLINE_BENCH_PRESS: "Decline Bench Press",
-    DUMBBELL_FLAT_BENCH_PRESS: "Dumbbell Flat Bench Press",
-    DUMBBELL_INCLINE_BENCH_PRESS: "Dumbbell Incline Bench Press",
-    DUMBBELL_DECLINE_BENCH_PRESS: "Dumbbell Decline Bench Press",
-    FLY_MACHINE_CHEST: "Fly Machine (Chest)",
-    LAYING_OVERHEAD_STRAIGHT_ARMS: "Laying Overhead Straight Arms",
-    CABLE_CHEST_SIDE_PULLS: "Cable Chest Side Pulls",
-    // SHOULDERS
-    DUMBBELL_SIDE_RAISES: "Dumbbell Side Raises",
-    DUMBBELL_FRONT_RAISES: "Dumbbell Front Raises",
-    DUMBBELL_FRONT_SIDE_RAISES: "Dumbbell Front & Side Raises",
-    SHOULDER_PRESS_MACHINE: "Shoulder Press Machine",
-    // TRICEPS
-    SKULL_CRUSHERS: "Skull Crushers",
-    STANDING_TRICEP_OVERHEAD_EXT: "Standing Tricep Overhead Extension",
-    CABLE_TRICEP_PULLDOWNS: "Cable Tricep Pulldowns",
-    TRICEP_PRESS_MACHINE: "Tricep Press Machine",
-    // BACK
-    BENT_OVER_ROWS: "Bent Over Rows",
-    SHRUGS: "Shrugs",
-    STIFF_LEG_DEADLIFTS: "Stiff Leg Deadlift",
-    ASSISTED_PULL_UPS: "Assisted Pull-ups",
-    SEATED_CABLE_PULLDOWNS: "Seated Cable Pulldowns",
-    SEATED_CABLE_ROWS: "Seated Cable Rows",
-    STANDING_T_ROWS: "Standing T-Rows",
-    // BICEPS
-    CABLE_OVERHAND_CURLS: "Cable Overhand Curls",
-    CABLE_UNDERHAND_CURLS: "Cable Underhand Curls",
-    CABLE_ROPE_CURLS: "Cable Rope Curls",
-    DUMBBELL_OVERHAND_CURLS: "Dumbbell Overhand Curls",
-    DUMBBELL_UNDERHAND_CURLS: "Dumbbell Underhand Curls",
-    DUMBBELL_HAMMER_CURLS: "Dumbbell Hammer Curls",
-    // LEGS
-    LEG_PRESS_MACHINE: "Leg Press Machine",
-    LEG_EXT_MACHINE: "Leg Extension Machine",
-    LEG_CURL_MACHINE: "Leg Curl Machine",
-    CALF_EXT_MACHINE: "Calf Extension Machine",
-    STANDING_GLUTE_MACHINE: "Standing Glute Machine",
-    HIP_ABDUCTION_MACHINE: "Hip Abduction (Out) Machine",
-    HIP_ADDUCTION_MACHINE: "Hip Adduction (in) Machine",
-    // CORE
-    ABDOMINAL_CRUNCH_MACHINE: "Abdominal Crunch Machine",
-    OBLIQUE_SIDE_BEND: "Oblique Side Bends"
+    ELLIPTICAL: {
+      id: "cardio_002",
+      name: "Elliptical",
+      category: Category.CARDIO,
+      notes: "Aim for 2 miles in 20 to 30 minutes. Adjust resistance and incline settings to maintain that goal."
+    },
+    STAIR_STEPPER: {
+      id: "cardio_003",
+      name: "Stair Stepper",
+      category: Category.CARDIO,
+      notes: "Use for 20 to 30 minutes. Adjust speed in an effort to keep heart rate above 140 bpm."
+    },
+    TREADMILL: {
+      id: "cardio_004",
+      name: "Treadmill",
+      category: Category.CARDIO,
+      notes: "Aim for 2 miles in 20 to 30 minutes. Adjust incline setting to maintain that goal."
+    },
+    // MISC --------------------------------------------------------------------
+    MISC_EXERCISE: {
+      id: "misc_001",
+      name: "Miscellaneous Exercise",
+      category: Category.MISC,
+      notes: "For miscellaneous general exercises."
+    },
+    STRETCHING: {
+      id: "misc_002",
+      name: "Stretching",
+      category: Category.MISC,
+      notes: "Aim for 5 to 10 minutes of stretching with a focus on recently used muscle groups."
+    },
+    // CHEST -------------------------------------------------------------------
+    FLAT_TNG_PRESS: {
+      id: "chest_001",
+      name: "Flat TNG Bench Press",
+      category: Category.CHEST,
+      notes: "Touch-and-go style. Rest times of ~2 minutes doing sets of 5. Final set can be AMRAP at a lower weight."
+    },
+    INCLINE_TNG_PRESS: {
+      id: "chest_002",
+      name: "Incline TNG Bench Press",
+      category: Category.CHEST,
+      notes: "Touch-and-go style. Rest times of ~2 minutes doing sets of 5. Final set can be AMRAP at a lower weight."
+    },
+    DECLINE_TNG_PRESS: {
+      id: "chest_003",
+      name: "Decline TNG Bench Press",
+      category: Category.CHEST,
+      notes: "Touch-and-go style. Rest times of ~2 minutes doing sets of 5. Final set can be AMRAP at a lower weight."
+    },
+    FLAT_PIN_PRESS: {
+      id: "chest_004",
+      name: "Flat PIN Bench Press",
+      category: Category.CHEST,
+      notes: "Pin press style. Rest times of ~2 minutes doing sets of 5. Final set can be AMRAP at a lower weight."
+    },
+    INCLINE_PIN_PRESS: {
+      id: "chest_005",
+      name: "Incline PIN Bench Press",
+      category: Category.CHEST,
+      notes: "Pin press style. Rest times of ~2 minutes doing sets of 5. Final set can be AMRAP at a lower weight."
+    },
+    DECLINE_PIN_PRESS: {
+      id: "chest_006",
+      name: "Decline PIN Bench Press",
+      category: Category.CHEST,
+      notes: "Pin press style. Rest times of ~2 minutes doing sets of 5. Final set can be AMRAP at a lower weight."
+    },
+    FLAT_DUMBBELL_PRESS: {
+      id: "chest_007",
+      name: "Flat Dumbell Press",
+      category: Category.CHEST,
+      notes: "Rest times of ~1 minute doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    INCLINE_DUMBBELL_PRESS: {
+      id: "chest_008",
+      name: "Incline Dumbell Press",
+      category: Category.CHEST,
+      notes: "Rest times of ~1 minute doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    DECLINE_DUMBBELL_PRESS: {
+      id: "chest_009",
+      name: "Decline Dumbell Press",
+      category: Category.CHEST,
+      notes: "Rest times of ~1 minute doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    FLY_MACHINE_CHEST: {
+      id: "chest_010",
+      name: "Fly Machine (Chest)",
+      category: Category.CHEST,
+      notes: "Rest times of ~1 minute doing slow sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    LAYING_OVERHEAD_STRAIGHT_ARMS: {
+      id: "chest_011",
+      name: "Laying Overhead Straight Arms",
+      category: Category.CHEST,
+      notes: "Rest times of ~1 minute doing slow sets of 10."
+    },
+    CABLE_CHEST_SIDE_PULLS: {
+      id: "chest_012",
+      name: "Cable Chest Side Pulls",
+      category: Category.CHEST,
+      notes: "Rest times of ~1 minute doing slow sets of 10."
+    },
+    // SHOULDERS ---------------------------------------------------------------
+    SIDE_RAISES: {
+      id: "shoulders_001",
+      name: "Weighted Side Raises",
+      category: Category.SHOULDERS,
+      notes: "Extend arms outward. Rest times of ~1 minute doing sets of 10."
+    },
+    FRONT_RAISES: {
+      id: "shoulders_002",
+      name: "Weighted Front Raises",
+      category: Category.SHOULDERS,
+      notes: "Extend arms forward. Rest times of ~1 minute doing sets of 10."
+    },
+    FRONT_SIDE_RAISES: {
+      id: "shoulders_003",
+      name: "Weighted Front and Side Raises",
+      category: Category.SHOULDERS,
+      notes: "Extend arms forward then outward. Rest times of ~1 minute doing sets of 10."
+    },
+    SEATED_SHOULDER_PRESS: {
+      id: "shoulders_004",
+      name: "Seated Shoulder Press",
+      category: Category.SHOULDERS,
+      notes: "Rest times of ~1 minute doing sets of 10."
+    },
+    // TRICEPS -----------------------------------------------------------------
+    SKULL_CRUSHERS: {
+      id: "triceps_001",
+      name: "Skull Crushers",
+      category: Category.TRICEPS,
+      notes: "Lower weight behind head while laying down. Rest times of ~1 minute doing sets of 10."
+    },
+    TRICEP_OVERHEAD_EXT: {
+      id: "triceps_002",
+      name: "Tricep Overhead Extension",
+      category: Category.TRICEPS,
+      notes: "Tricep overhead extension while standing or seated. Rest times of ~1 minute doing sets of 10."
+    },
+    TRICEP_KICKBACKS: {
+      id: "triceps_003",
+      name: "Tricep Kickbacks",
+      category: Category.TRICEPS,
+      notes: "Rest times of ~1 minute doing sets of 10. Final set can be AMRAP at a lower weight."
+    },
+    CABLE_TRICEP_PULLDOWNS: {
+      id: "triceps_004",
+      name: "Cable Tricep Pulldowns",
+      category: Category.TRICEPS,
+      notes: "Using any attachment. Rest times of ~1 minute doing sets of 10. Final set can be AMRAP at a lower weight."
+    },
+    TRICEP_PRESS: {
+      id: "triceps_005",
+      name: "Tricep Press Machine",
+      category: Category.TRICEPS,
+      notes: "Rest times of ~1 minute doing sets of 10. Final set can be AMRAP at a lower weight."
+    },
+    // BACK --------------------------------------------------------------------
+    BENT_OVER_ROWS: {
+      id: "back_001",
+      name: "Bent Over Rows",
+      category: Category.BACK,
+      notes: "Remember to brace hard! Rest times of ~2 minutes doing sets of 5. Final set can be AMRAP at a lower weight."
+    },
+    SHRUGS: {
+      id: "back_002",
+      name: "Shrugs",
+      category: Category.BACK,
+      notes: "Rest times of ~2 minutes doing sets of 5. Final set can be AMRAP at a lower weight."
+    },
+    DEADLIFTS: {
+      id: "back_003",
+      name: "Deadlifts",
+      category: Category.BACK,
+      notes: "Remember to brace hard! Rest times of ~2 minutes doing sets of 5."
+    },
+    STIFF_LEG_DEADLIFTS: {
+      id: "back_004",
+      name: "Stiff Leg Deadlifts",
+      category: Category.BACK,
+      notes: "Remember to brace hard! Rest times of ~2 minutes doing sets of 5."
+    },
+    ASSISTED_PULL_UPS: {
+      id: "back_005",
+      name: "Assisted Pull-ups",
+      category: Category.BACK,
+      notes: "Rest times of ~1 minutes doing sets of 10."
+    },
+    SEATED_CABLE_PULLDOWNS: {
+      id: "back_006",
+      name: "Seated Cable Pulldowns",
+      category: Category.BACK,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    SEATED_CABLE_ROWS: {
+      id: "back_007",
+      name: "Seated Cable Rows",
+      category: Category.BACK,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    STANDING_T_ROWS: {
+      id: "back_008",
+      name: "Standing T-Rows",
+      category: Category.BACK,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    // BICEPS ------------------------------------------------------------------
+    CABLE_OVERHAND_CURLS: {
+      id: "biceps_001",
+      name: "Cable Overhand Curls",
+      category: Category.BICEPS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    CABLE_UNDERHAND_CURLS: {
+      id: "biceps_002",
+      name: "Cable Underhand Curls",
+      category: Category.BICEPS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    CABLE_ROPE_CURLS: {
+      id: "biceps_003",
+      name: "Cable Rope Curls",
+      category: Category.BICEPS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    DUMBBELL_OVERHAND_CURLS: {
+      id: "biceps_004",
+      name: "Dumbbell Overhand Curls",
+      category: Category.BICEPS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    DUMBBELL_UNDERHAND_CURLS: {
+      id: "biceps_005",
+      name: "Dumbbell Underhand Curls",
+      category: Category.BICEPS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    DUMBBELL_HAMMER_CURLS: {
+      id: "biceps_006",
+      name: "Dumbbell Hammer Curls",
+      category: Category.BICEPS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    SEATED_PREACHER_CURLS: {
+      id: "biceps_007",
+      name: "Seated Preacher Curls",
+      category: Category.BICEPS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    // LEGS --------------------------------------------------------------------
+    WEIGHTED_SQUATS: {
+      id: "legs_001",
+      name: "Weighted Squats",
+      category: Category.LEGS,
+      notes: "Remember to brace hard! Rest times of ~2 minutes doing sets of 5."
+    },
+    LEG_PRESS_MACHINE: {
+      id: "legs_002",
+      name: "Leg Press Machine",
+      category: Category.LEGS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    LEG_EXT_MACHINE: {
+      id: "legs_003",
+      name: "Leg Extension Machine",
+      category: Category.LEGS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    LEG_CURL_MACHINE: {
+      id: "legs_004",
+      name: "Leg Curl Machine",
+      category: Category.LEGS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    CALF_EXT_MACHINE: {
+      id: "legs_005",
+      name: "Calf Extension Machine",
+      category: Category.LEGS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    STANDING_GLUTE_MACHINE: {
+      id: "legs_006",
+      name: "Standing Glute Machine",
+      category: Category.LEGS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    HIP_ABDUCTION_MACHINE: {
+      id: "legs_007",
+      name: "Hip Abduction (Out) Machine",
+      category: Category.LEGS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    HIP_ADDUCTION_MACHINE: {
+      id: "legs_008",
+      name: "Hip Adduction (in) Machine",
+      category: Category.LEGS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    HIP_THRUSTERS: {
+      id: "legs_009",
+      name: "Hip Thrusters",
+      category: Category.LEGS,
+      notes: "Rest times of ~1 minutes doing sets of 8 to 10. Final set can be AMRAP at a lower weight."
+    },
+    // CORE --------------------------------------------------------------------
+    MISC_CORE: {
+      id: "core_001",
+      name: "Miscellaneous Core",
+      category: Category.CORE,
+      notes: "For miscellaneous core exercises."
+    },
+    ABDOMINAL_CRUNCH_MACHINE: {
+      id: "core_002",
+      name: "Abdominal Crunch Machine",
+      category: Category.CORE,
+      notes: "Rest times of ~1 minutes doing sets of 15 to 25. Final set can be AMRAP at a lower weight."
+    },
+    OBLIQUE_SIDE_BEND: {
+      id: "core_003",
+      name: "Oblique Side Bends",
+      category: Category.CORE,
+      notes: "Lower and lift weight along side of body with arms straight. Rest times of ~1 minutes doing sets of 15 to 25. Final set can be AMRAP at a lower weight."
+    }
   }
 
   // Reveal module properties
