@@ -1,18 +1,15 @@
 import React, { useContext, useEffect } from "react";
 import AppContext from "../../context/appContext";
-import useInterval from "../../modules/helpers";
 
 const Header = () => {
   const appContext = useContext(AppContext);
-  const { setStartTime, setTimerId, routine_start_time } = appContext;
-
-  let timerId = useInterval(() => {
-    setTimerId(timerId);
-    calculateRoutineTime(routine_start_time);
-  }, 1000);
 
   useEffect(() => {
-    setStartTime();
+    const interval = setInterval(() => {
+      calculateRoutineTime(appContext.routine_start_time);
+    });
+    // Clear interval during unmount
+    return () => clearInterval(interval);
     // eslint-disable-next-line
   }, []); // [] means call once
 

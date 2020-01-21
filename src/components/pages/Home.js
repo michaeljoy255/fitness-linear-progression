@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import AppContext from "../../context/appContext";
 import DataInitializer from "../../modules/data-initializer";
 
 const Home = () => {
+  const appContext = useContext(AppContext);
   const routines = DataInitializer.initializeRoutines();
 
   return (
@@ -14,6 +16,7 @@ const Home = () => {
             to={`/routine/${routine.id}`}
             className='routine-btn'
             key={routine.id}
+            onClick={appContext.setRoutineStartTime}
           >
             <div>{routine.name}</div>
             <div className='mini-text'>Jan 20, 2020 (00:12:15)</div>
