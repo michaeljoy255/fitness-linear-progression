@@ -15,7 +15,8 @@ const Home = () => {
             className='routine-btn'
             key={routine.id}
           >
-            {routine.name}
+            <div>{routine.name}</div>
+            <div className='mini-text'>Jan 20, 2020 (00:12:15)</div>
           </Link>
         ))}
       </div>

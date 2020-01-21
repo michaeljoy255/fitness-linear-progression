@@ -1,3 +1,3 @@
-// all actions have types
-export const EXAMPLE_ACTION = "EXAMPLE_ACTION";
-export const GET_EXERCISE = "GET_EXERCISE";
+export const START_TIMER = "START_TIMER";
+export const ROUTINE_TIMER = "ROUTINE_TIMER";
+export const RESET_TIMER = "RESET_TIMER";
