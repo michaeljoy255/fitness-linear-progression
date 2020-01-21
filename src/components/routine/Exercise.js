@@ -1,13 +1,12 @@
 import React from "react";
-import ExerciseInputs from "./ExerciseInputs";
+import Inputs from "./Inputs";
 
 const Exercise = () => {
   return (
-    <div>
-      <h1>Exercise Component</h1>
+    <div className='exercise'>
       <p>Exercise Name - Category</p>
       <p>Exercise Notes</p>
-      <ExerciseInputs />
+      <Inputs />
     </div>
   );
 };

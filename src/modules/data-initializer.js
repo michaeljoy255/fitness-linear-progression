@@ -42,7 +42,7 @@ const DataInitializer = (function() {
   };
 
   return {
-    seedExercises: function() {
+    initializeExercises: function() {
       const exercises = [];
 
       Object.keys(Constants.Exercise).forEach(key => {
@@ -51,7 +51,7 @@ const DataInitializer = (function() {
 
       return exercises;
     },
-    seedRoutines: function() {
+    initializeRoutines: function() {
       const routines = [];
 
       Object.keys(Constants.Routine).forEach(key => {
