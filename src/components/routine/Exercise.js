@@ -1,12 +1,23 @@
-import React from "react";
-import Inputs from "./Inputs";
+import React, { useContext } from "react";
+import AppContext from "../../context/appContext";
 
-const Exercise = () => {
+const Exercise = props => {
+  const appContext = useContext(AppContext);
+
+  const currentExercise = appContext.initial_exercises.find(
+    exercise => exercise.id === props.id
+  );
+
+  console.log(currentExercise);
+
   return (
     <div className='exercise'>
       <p>Exercise Name - Category</p>
       <p>Exercise Notes</p>
-      <Inputs />
+      <div className='exercise-inputs'>
+        <input type='text' />
+        <input type='text' />
+      </div>
     </div>
   );
 };

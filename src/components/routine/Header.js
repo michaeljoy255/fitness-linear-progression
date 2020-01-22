@@ -6,16 +6,19 @@ const Header = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      calculateRoutineTime(appContext.routine_start_time);
+      updateRoutineTimer();
     });
-    // Clear interval during unmount
-    return () => clearInterval(interval);
-    // eslint-disable-next-line
-  }, []); // [] means call once
 
-  const calculateRoutineTime = startTime => {
+    return () => clearInterval(interval); // Clears interval during unmount
+    // eslint-disable-next-line
+  }, []); // [] means call once only
+
+  /**
+   * Updates the routine timer in the header - HH:MM:SS
+   */
+  const updateRoutineTimer = () => {
     const currentTime = new Date().getTime();
-    const timeDiff = currentTime - startTime;
+    const timeDiff = currentTime - appContext.routine_start_time;
     const secsPerDay = 60 * 60 * 1000 * 24;
     const secsPerHour = 60 * 60 * 1000;
 
