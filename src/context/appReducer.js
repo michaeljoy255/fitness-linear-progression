@@ -5,7 +5,7 @@ export default (state, action) => {
     case ROUTINE_START_TIME:
       return {
         ...state,
-        routine_start_time: new Date().getTime()
+        current: { startedAt: new Date().getTime() }
       };
     default:
       return state;

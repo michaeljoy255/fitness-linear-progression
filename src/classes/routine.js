@@ -2,12 +2,14 @@ class Routine {
   constructor({
     id = null,
     name = null,
-    details = null,
+    date = null,
+    duration = null,
     exercise_ids = []
-  }={}) {
+  } = {}) {
     this.id = id;
     this.name = name;
-    this.details = details;
+    this.date = date;
+    this.duration = duration;
     this.exercise_ids = exercise_ids;
   }
 }

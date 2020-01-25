@@ -1,16 +1,22 @@
 import React, { useReducer } from "react";
 import AppContext from "./appContext";
 import AppReducer from "./appReducer";
-import DataInitializer from "../modules/data-initializer";
+import Initializer from "../modules/initializer";
 import { ROUTINE_START_TIME } from "./types";
 
 const AppState = props => {
+  // Setup initial state
   const initialState = {
-    initial_exercises: DataInitializer.initializeExercises(),
-    initial_routines: DataInitializer.initializeRoutines(),
-    exercises: [],
-    routine: null,
-    routine_start_time: new Date().getTime()
+    previous: {
+      exercises: Initializer.initAllExercises(),
+      routines: Initializer.initAllRoutines(),
+      best: Initializer.initAllBest()
+    },
+    current: {
+      exercises: [],
+      routine: null,
+      startTime: null
+    }
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
@@ -19,14 +25,25 @@ const AppState = props => {
     dispatch({ type: ROUTINE_START_TIME });
   };
 
+  const logState = () => {
+    console.log(state);
+  };
+
+  //----------------------------------------------------------------------------
   return (
     <AppContext.Provider
       value={{
-        initial_exercises: state.initial_exercises,
-        initial_routines: state.initial_routines,
-        exercises: state.exercises,
-        routine: state.routine,
-        routine_start_time: state.routine_start_time,
+        previous: {
+          exercises: initialState.previous.exercises,
+          routines: initialState.previous.routines,
+          best: initialState.previous.best
+        },
+        current: {
+          exercises: [],
+          routine: null,
+          startedAt: null
+        },
+        logState,
         setRoutineStartTime
       }}
     >

@@ -4,13 +4,21 @@ class Exercise {
     name = null,
     category = null,
     notes = null,
-    details = null
-  }={}) {
+    date = null,
+    duration = null,
+    distance = null,
+    weight = null,
+    sets = []
+  } = {}) {
     this.id = id;
     this.name = name;
     this.category = category;
     this.notes = notes;
-    this.details = details;
+    this.date = date;
+    this.duration = duration;
+    this.distance = distance;
+    this.weight = weight;
+    this.sets = sets;
   }
 }
 
