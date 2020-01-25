@@ -1,1 +1,1 @@
-export const ROUTINE_START_TIME = "ROUTINE_START_TIME";
+export const SET_START_TIME = "SET_START_TIME";

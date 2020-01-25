@@ -21,8 +21,7 @@ const Initializer = (function() {
       date: exercise.date,
       duration: exercise.duration,
       distance: exercise.distance,
-      weight: exercise.weight,
-      sets: exercise.sets
+      sets: [new ASet(), new ASet(), new ASet(), new ASet(), new ASet()]
     });
   };
 

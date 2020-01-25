@@ -10,8 +10,23 @@ body {
 }
 
 a {
-  color: #333;
   text-decoration: none;
+  color: white;
+}
+
+.material-icons {
+  color: black;
+}
+
+.btn {
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #33356b;
+  width: 250px;
+  padding: 5px;
+  margin-bottom: 15px;
+  font-size: 12px;
 }
 
 .mini-text {

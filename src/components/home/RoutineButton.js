@@ -1,18 +1,25 @@
-import React, { useContext } from "react";
-import AppContext from "../../context/appContext";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 const RoutineButton = props => {
-  const appContext = useContext(AppContext);
-  const { id, name, date, duration } = props;
+  const { rid, name, date, duration } = props;
 
   return (
-    <Link to={`/routine/${id}`} id={id} onClick={appContext.logState}>
-      <div>{name}</div>
-      <div>
-        {date} ({duration})
-      </div>
-    </Link>
+    <li>
+      <Link to={`/routine/${rid}`}>
+        <div className='btn'>
+          <div>{name}</div>
+          <div>
+            {(date && (
+              <Fragment>
+                {date} ({duration})
+              </Fragment>
+            )) ||
+              "No previous record"}
+          </div>
+        </div>
+      </Link>
+    </li>
   );
 };
 

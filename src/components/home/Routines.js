@@ -4,22 +4,22 @@ import AppContext from "../../context/appContext";
 
 const Routines = () => {
   const appContext = useContext(AppContext);
-  const { previous } = appContext;
+  const { routines } = appContext.previous;
 
   return (
-    <div className='container'>
-      {previous.routines.map(routine => {
+    <ul className='container'>
+      {routines.map(routine => {
         return (
           <RoutineButton
-            key={routine.id}
-            id={routine.id}
+            key={`rKey_${routine.id}`}
+            rid={routine.id}
             name={routine.name}
             date={routine.date}
             duration={routine.duration}
           />
         );
       })}
-    </div>
+    </ul>
   );
 };
 

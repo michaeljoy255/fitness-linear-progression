@@ -2,10 +2,9 @@ import React, { useReducer } from "react";
 import AppContext from "./appContext";
 import AppReducer from "./appReducer";
 import Initializer from "../modules/initializer";
-import { ROUTINE_START_TIME } from "./types";
+import { SET_START_TIME } from "./types";
 
 const AppState = props => {
-  // Setup initial state
   const initialState = {
     previous: {
       exercises: Initializer.initAllExercises(),
@@ -15,14 +14,14 @@ const AppState = props => {
     current: {
       exercises: [],
       routine: null,
-      startTime: null
+      startedAt: null
     }
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  const setRoutineStartTime = () => {
-    dispatch({ type: ROUTINE_START_TIME });
+  const setStartTime = function(time) {
+    dispatch({ type: SET_START_TIME, payload: time });
   };
 
   const logState = () => {
@@ -44,7 +43,7 @@ const AppState = props => {
           startedAt: null
         },
         logState,
-        setRoutineStartTime
+        setStartTime
       }}
     >
       {props.children}

@@ -7,7 +7,6 @@ class Exercise {
     date = null,
     duration = null,
     distance = null,
-    weight = null,
     sets = []
   } = {}) {
     this.id = id;
@@ -17,7 +16,6 @@ class Exercise {
     this.date = date;
     this.duration = duration;
     this.distance = distance;
-    this.weight = weight;
     this.sets = sets;
   }
 }

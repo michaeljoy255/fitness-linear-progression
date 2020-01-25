@@ -1,9 +1,23 @@
-import Category from "./constants";
-
 /**
  * Default data for exercises and routines
  */
 const Defaults = (function() {
+  /**
+   * Categories for exercises
+   */
+  const Category = {
+    BACK: "Back",
+    BICEPS: "Biceps",
+    CARDIO: "Cardio",
+    CHEST: "Chest",
+    CORE: "Core",
+    EVENT: "Event",
+    LEGS: "Legs",
+    MISC: "Miscellaneous",
+    SHOULDERS: "Shoudlers",
+    TRICEPS: "Triceps"
+  };
+
   /**
    * All available exercises
    * @todo IDs are Hard coded to prevent issues with local storage ATM

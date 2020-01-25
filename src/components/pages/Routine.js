@@ -1,32 +1,29 @@
-import React, { useContext } from "react";
-import Header from "../routine/Header";
-import Exercise from "../routine/Exercise";
+import React, { Fragment, useContext, useEffect } from "react";
 import AppContext from "../../context/appContext";
+import Header from "../routine/Header";
+import Exercises from "../routine/Exercises";
 
 const Routine = props => {
   const appContext = useContext(AppContext);
+  const { routines } = appContext.previous;
+  const { setStartTime } = appContext;
+  const { routineId } = props.match.params;
 
-  const currentRoutineId = props.match.params.id;
+  const routineName = routines.find(routine => routine.id === routineId).name;
+  const exerciseIds = routines.find(routine => routine.id === routineId)
+    .exercise_ids;
 
-  const routineTitle = appContext.initial_routines.find(
-    routine => routine.id === currentRoutineId
-  ).name;
-
-  const routineExerciseIds = appContext.initial_routines.find(
-    routine => routine.id === currentRoutineId
-  ).exercise_ids;
-
-  const routineExercises = routineExerciseIds.map(exerciseId => (
-    <Exercise key={exerciseId} id={exerciseId} />
-  ));
+  useEffect(() => {
+    setStartTime(new Date().getTime());
+    // eslint-disable-next-line
+  }, []);
 
   return (
-    <section className='routine-section'>
+    <Fragment>
       <Header />
-      <div className='routine-title'>{routineTitle}</div>
-      {routineExercises}
-      <a href='/'>Submit Workout</a>
-    </section>
+      <div className='container'>{routineName}</div>
+      <Exercises eids={exerciseIds} />
+    </Fragment>
   );
 };
 
