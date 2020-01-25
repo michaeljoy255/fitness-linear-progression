@@ -62,11 +62,20 @@ const Initializer = (function() {
    * @returns {Array}
    */
   const initAllExercises = function() {
-    const exercises = [];
+    let exercises = [];
 
     Object.keys(Defaults.Exercise).forEach(key => {
       exercises.push(initExercise(Defaults.Exercise[key]));
     });
+
+    if (localStorage.getItem("data") === null) {
+      Object.keys(Defaults.Exercise).forEach(key => {
+        exercises.push(initExercise(Defaults.Exercise[key]));
+      });
+    } else {
+      const data = JSON.parse(localStorage.getItem("data"));
+      exercises = [...data.exercises];
+    }
 
     return exercises;
   };
@@ -76,11 +85,16 @@ const Initializer = (function() {
    * @returns {Array}
    */
   const initAllRoutines = function() {
-    const routines = [];
+    let routines = [];
 
-    Object.keys(Defaults.Routine).forEach(key => {
-      routines.push(initRoutine(Defaults.Routine[key]));
-    });
+    if (localStorage.getItem("data") === null) {
+      Object.keys(Defaults.Routine).forEach(key => {
+        routines.push(initRoutine(Defaults.Routine[key]));
+      });
+    } else {
+      const data = JSON.parse(localStorage.getItem("data"));
+      routines = [...data.routines];
+    }
 
     return routines;
   };
@@ -98,6 +112,8 @@ const Initializer = (function() {
 
     return best;
   };
+
+  // @TODO - methods that pull from local storage for the initialization
 
   return {
     initAllExercises,

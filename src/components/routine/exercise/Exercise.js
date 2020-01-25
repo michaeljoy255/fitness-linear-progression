@@ -14,10 +14,16 @@ const Exercise = props => {
   );
 
   return (
-    <div className='exercise' id={id}>
+    <div className='exercise'>
       <Heading name={name} category={category} />
       <Details notes={notes} />
-      <Inputs id={id} duration={duration} distance={distance} sets={sets} />
+      <Inputs
+        id={id}
+        category={category}
+        duration={duration}
+        distance={distance}
+        sets={sets}
+      />
     </div>
   );
 };

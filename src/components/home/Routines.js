@@ -6,6 +6,16 @@ const Routines = () => {
   const appContext = useContext(AppContext);
   const { routines } = appContext.previous;
 
+  routines.sort((a, b) => {
+    if (a.id > b.id) {
+      return 1;
+    } else if (a.id < b.id) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+
   return (
     <ul className='container'>
       {routines.map(routine => {

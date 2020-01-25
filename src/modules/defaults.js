@@ -473,6 +473,7 @@ const Defaults = (function() {
   };
 
   return {
+    Category,
     Exercise,
     Routine
   };

@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <Navbar />
+      {/* <Navbar /> */}
       <h1>{appTitle}</h1>
       <Routines />
     </Fragment>
