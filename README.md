@@ -1,3 +1,13 @@
+# Fitness Linear Progression
+
+This app has been part of an ongoing project to create, refactor, and recreate the same simple app in an effort to improve it and my programming ability.
+
+```
+https://michaeljoy255.github.io/fitness-linear-progression/
+```
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
