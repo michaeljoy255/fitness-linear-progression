@@ -395,6 +395,7 @@ const Defaults = (function() {
       exercise_ids: [
         Exercise.ELLIPTICAL.id,
         Exercise.STAIR_STEPPER.id,
+        Exercise.TREADMILL.id,
         Exercise.STRETCHING.id
       ]
     },
@@ -404,8 +405,8 @@ const Defaults = (function() {
       date: null,
       duration: null,
       exercise_ids: [
-        Exercise.FLAT_TNG_PRESS.id,
-        Exercise.INCLINE_TNG_PRESS.id,
+        Exercise.FLAT_PIN_PRESS.id,
+        Exercise.INCLINE_PIN_PRESS.id,
         Exercise.OVERHEAD_STRAIGHT_ARMS.id,
         Exercise.FRONT_SIDE_RAISES.id,
         Exercise.SKULL_CRUSHERS.id,
@@ -419,10 +420,10 @@ const Defaults = (function() {
       duration: null,
       exercise_ids: [
         Exercise.FLAT_PIN_PRESS.id,
-        Exercise.DECLINE_TNG_PRESS.id,
+        Exercise.DECLINE_PIN_PRESS.id,
         Exercise.FLY_MACHINE_CHEST.id,
         Exercise.FRONT_SIDE_RAISES.id,
-        Exercise.TRICEP_KICKBACKS.id,
+        Exercise.CABLE_TRICEP_PULLDOWNS.id,
         Exercise.STRETCHING.id
       ]
     },
@@ -458,10 +459,12 @@ const Defaults = (function() {
       date: null,
       duration: null,
       exercise_ids: [
+        Exercise.WEIGHTED_SQUATS.id,
         Exercise.LEG_PRESS_MACHINE.id,
         Exercise.LEG_EXT_MACHINE.id,
         Exercise.LEG_CURL_MACHINE.id,
         Exercise.CALF_EXT_MACHINE.id,
+        Exercise.HIP_THRUSTERS.id,
         Exercise.STANDING_GLUTE_MACHINE.id,
         Exercise.HIP_ABDUCTION_MACHINE.id,
         Exercise.HIP_ADDUCTION_MACHINE.id,

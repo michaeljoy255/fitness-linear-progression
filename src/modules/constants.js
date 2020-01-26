@@ -16,7 +16,8 @@ const Constants = (function() {
     FITNESS: "fitness_center",
     TIMER: "timer",
     SETTINGS: "settings_applications",
-    INFO: "info"
+    INFO: "info",
+    CLEAR: "clear"
   };
 
   return {

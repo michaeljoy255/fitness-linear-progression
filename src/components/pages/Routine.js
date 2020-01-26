@@ -42,10 +42,12 @@ const Routine = props => {
 
   return (
     <Fragment>
-      <Header />
-      <div className='container'>{routineName}</div>
+      <Header name={routineName} />
+      <div className='top-spacer'></div>
       <Exercises eids={exerciseIds} />
-      <button onClick={finishWorkout}>Finish Workout</button>
+      <button onClick={finishWorkout}>
+        <h3>Submit Workout</h3>
+      </button>
     </Fragment>
   );
 };

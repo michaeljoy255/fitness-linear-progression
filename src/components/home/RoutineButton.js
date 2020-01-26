@@ -20,9 +20,9 @@ const RoutineButton = props => {
       ((((duration % secsPerDay) % secsPerHour) % (60 * 1000)) / 1000) * 1
     );
 
-    const strHours = hours.toString() != "0" ? `${hours.toString()}h ` : "";
-    const strMins = mins.toString() != "0" ? `${mins.toString()}m ` : "";
-    const strSecs = secs.toString() != "0" ? `${secs.toString()}s` : "";
+    const strHours = hours.toString() !== "0" ? `${hours.toString()}h ` : "";
+    const strMins = mins.toString() !== "0" ? `${mins.toString()}m ` : "";
+    const strSecs = secs.toString() !== "0" ? `${secs.toString()}s` : "";
 
     return `${strHours}${strMins}${strSecs}`;
   };
@@ -34,7 +34,7 @@ const RoutineButton = props => {
       <Link to={`/routine/${rid}`}>
         <div className='btn'>
           <div>{name}</div>
-          <div>
+          <div className='small-text'>
             {(date && (
               <Fragment>
                 {date} ({durationTime})

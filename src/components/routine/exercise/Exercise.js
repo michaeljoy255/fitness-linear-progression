@@ -17,13 +17,15 @@ const Exercise = props => {
     <div className='exercise'>
       <Heading name={name} category={category} />
       <Details notes={notes} />
-      <Inputs
-        id={id}
-        category={category}
-        duration={duration}
-        distance={distance}
-        sets={sets}
-      />
+      <div className='inputs'>
+        <Inputs
+          id={id}
+          category={category}
+          duration={duration}
+          distance={distance}
+          sets={sets}
+        />
+      </div>
     </div>
   );
 };

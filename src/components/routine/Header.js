@@ -2,10 +2,10 @@ import React from "react";
 import Constants from "../../modules/constants";
 import { useHistory } from "react-router-dom";
 
-const Header = () => {
+const Header = props => {
   const history = useHistory();
 
-  const cancelIcon = Constants.Icon.CANCEL;
+  const cancelIcon = Constants.Icon.CLEAR;
   const timerIcon = Constants.Icon.TIMER;
 
   const onCancel = function() {
@@ -21,7 +21,9 @@ const Header = () => {
           {cancelIcon}
         </i>
       </li>
-      <li>Routine Name</li>
+      <li>
+        <h3>{props.name}</h3>
+      </li>
       <li>
         <i className='material-icons'>{timerIcon}</i>
       </li>

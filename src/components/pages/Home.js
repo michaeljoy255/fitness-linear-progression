@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Navbar from "../home/Navbar";
+// import Navbar from "../home/Navbar";
 import Routines from "../home/Routines";
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <Fragment>
       {/* <Navbar /> */}
-      <h1>{appTitle}</h1>
+      <h1 className='title'>{appTitle}</h1>
       <Routines />
     </Fragment>
   );

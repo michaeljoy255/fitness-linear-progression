@@ -25,84 +25,101 @@ const Inputs = props => {
 
   // Conditionals that determine which inputs appear
   if (category === Defaults.Category.MISC) {
-    return <div className='inputs'>{/* No inputs for MISC exercises */}</div>;
+    return (
+      <div className='misc-inputs'>
+        <div className='input-text'>Duration</div>
+        <input
+          type='number'
+          placeholder={`${duration || "-"} minutes`}
+          onChange={onDuration}
+        />
+      </div>
+    );
   } else if (category === Defaults.Category.CARDIO) {
     return (
-      <div className='inputs'>
-        <div>Duration</div>
-        <div>Distance or Steps</div>
-        <input type='number' placeholder={duration} onChange={onDuration} />
-        <input type='number' placeholder={distance} onChange={onDistance} />
+      <div className='cardio-inputs'>
+        <div className='input-text'>Duration</div>
+        <div className='input-text'>Distance or Steps</div>
+        <input
+          type='number'
+          placeholder={`${duration || "-"} minutes`}
+          onChange={onDuration}
+        />
+        <input
+          type='number'
+          placeholder={`${distance || "-"} miles/steps`}
+          onChange={onDistance}
+        />
       </div>
     );
   } else {
     return (
-      <div className='inputs'>
-        <div>Set</div>
-        <div>Weight</div>
-        <div>Reps</div>
-        <div>1</div>
+      <div className='weight-inputs'>
+        <div className='input-text'>Set</div>
+        <div className='input-text'>Weight</div>
+        <div className='input-text'>Reps</div>
+        <div className='set-text'>1</div>
         <input
           type='number'
-          placeholder={sets[0].weight}
+          placeholder={`${sets[0].weight || "-"} lbs`}
           name='0'
           onChange={onWeight}
         />
         <input
           type='number'
-          placeholder={sets[0].reps}
+          placeholder={`${sets[0].reps || "-"} reps`}
           name='0'
           onChange={onReps}
         />
-        <div>2</div>
+        <div className='set-text'>2</div>
         <input
           type='number'
-          placeholder={sets[1].weight}
+          placeholder={`${sets[1].weight || "-"} lbs`}
           name='1'
           onChange={onWeight}
         />
         <input
           type='number'
-          placeholder={sets[1].reps}
+          placeholder={`${sets[1].reps || "-"} reps`}
           name='1'
           onChange={onReps}
         />
-        <div>3</div>
+        <div className='set-text'>3</div>
         <input
           type='number'
-          placeholder={sets[2].weight}
+          placeholder={`${sets[2].weight || "-"} lbs`}
           name='2'
           onChange={onWeight}
         />
         <input
           type='number'
-          placeholder={sets[2].reps}
+          placeholder={`${sets[2].reps || "-"} reps`}
           name='2'
           onChange={onReps}
         />
-        <div>4</div>
+        <div className='set-text'>4</div>
         <input
           type='number'
-          placeholder={sets[3].weight}
+          placeholder={`${sets[3].weight || "-"} lbs`}
           name='3'
           onChange={onWeight}
         />
         <input
           type='number'
-          placeholder={sets[3].reps}
+          placeholder={`${sets[3].reps || "-"} reps`}
           name='3'
           onChange={onReps}
         />
-        <div>5</div>
+        <div className='set-text'>5</div>
         <input
           type='number'
-          placeholder={sets[4].weight}
+          placeholder={`${sets[4].weight || "-"} lbs`}
           name='4'
           onChange={onWeight}
         />
         <input
           type='number'
-          placeholder={sets[4].reps}
+          placeholder={`${sets[4].reps || "-"} reps`}
           name='4'
           onChange={onReps}
         />
