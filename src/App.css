@@ -1,4 +1,14 @@
 /* General */
+:root {
+  --comp-max-width: 400px;
+  --comp-bg-color: #1c1c1c;
+  --input-bg-color: #2e2d2b;
+  --light-text-color: #e2e2e2;
+  --gold-text-color: #d1be9a;
+  --grey-text-color: #666666;
+  --accent-line-color: #158fbe;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +18,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: black;
-  color: #e2e2e2;
+  color: var(--light-text-color);
 }
 
 #root {
@@ -24,7 +34,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: var(--comp-max-width);
 }
 
 ul,
@@ -34,7 +44,7 @@ li {
 
 a {
   text-decoration: none;
-  color: #e2e2e2;
+  color: var(--light-text-color);
 }
 
 button {
@@ -56,7 +66,7 @@ button {
 .btn .small-text {
   margin-top: 2px;
   font-size: 12px;
-  color: #d1be9a;
+  color: var(--gold-text-color);
 }
 
 .material-icons {
@@ -77,22 +87,22 @@ button {
   top: 0px;
   left: 0px;
   width: 100%;
-  background-color: #121212;
-  border-bottom: solid 1px #158fbe;
+  background-color: var(--comp-bg-color);
+  border-bottom: solid 1px var(--accent-line-color);
   padding: 10px 10px 10px 10px;
 }
 
 .top-spacer {
   width: 100%;
-  max-width: 400px;
+  max-width: var(--comp-max-width);
   margin-top: 60px;
-  border-bottom: dotted 4px #555555;
+  border-bottom: dotted 4px var(--grey-text-color);
   margin-bottom: 8px;
 }
 
 /* Exercises */
 .exercise {
-  background-color: #121212;
+  background-color: var(--comp-bg-color);
   margin-bottom: 15px;
 }
 
@@ -102,16 +112,16 @@ button {
   justify-content: space-between;
   padding: 10px;
   width: 100%;
-  border-bottom: solid 1px #158fbe;
+  border-bottom: solid 1px var(--accent-line-color);
 }
 
 .exercise .heading .name {
-  color: #d1be9a;
+  color: var(--gold-text-color);
 }
 
 .exercise .heading .category {
   text-transform: uppercase;
-  color: #7a7a7a;
+  color: var(--grey-text-color);
 }
 
 .exercise .details {
@@ -124,7 +134,7 @@ button {
 }
 
 .exercise .inputs {
-  border-top: solid 1px #158fbe;
+  border-top: solid 1px var(--accent-line-color);
   padding: 10px;
   width: 100%;
   font-size: 14px;
@@ -145,13 +155,15 @@ button {
 .exercise .misc-inputs {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 12px auto;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
 }
 
 .exercise .cardio-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 12px auto;
   grid-column-gap: 8px;
   grid-row-gap: 8px;
 }
@@ -159,7 +171,7 @@ button {
 .exercise .weight-inputs {
   display: grid;
   grid-template-columns: 1fr 6fr 6fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 12px auto;
   grid-column-gap: 8px;
   grid-row-gap: 8px;
 }
@@ -168,12 +180,12 @@ button {
 input {
   width: 100%;
   max-width: 160px;
-  background-color: #1c1c1c;
+  background-color: var(--input-bg-color);
   border: none;
-  border-bottom: solid 1px #d1be9a;
+  border-bottom: solid 1px var(--gold-text-color);
   height: 34px;
   padding: 4px 4px 4px 8px;
-  color: #e2e2e2;
+  color: var(--light-text-color);
   font-size: 16px;
 }
 
