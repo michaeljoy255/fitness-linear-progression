@@ -69,6 +69,12 @@ button {
   color: var(--gold-text-color);
 }
 
+.clear {
+  margin-top: 20px;
+  width: 200px;
+  background-color: #96200b;
+}
+
 .material-icons {
   cursor: pointer;
 }
