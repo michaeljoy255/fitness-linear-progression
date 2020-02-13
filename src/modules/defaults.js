@@ -388,7 +388,7 @@ const Defaults = (function() {
    */
   const Routine = {
     CARDIO_0: {
-      id: "routine_000",
+      id: "routine_007",
       name: "Cardio",
       date: null,
       duration: null,
@@ -400,7 +400,7 @@ const Defaults = (function() {
       ]
     },
     CHEST_0: {
-      id: "routine_001",
+      id: "routine_008",
       name: "Chest",
       date: null,
       duration: null,
@@ -413,7 +413,7 @@ const Defaults = (function() {
       ]
     },
     BACK_0: {
-      id: "routine_002",
+      id: "routine_009",
       name: "Back",
       date: null,
       duration: null,
@@ -426,7 +426,7 @@ const Defaults = (function() {
       ]
     },
     LEGS_0: {
-      id: "routine_003",
+      id: "routine_010",
       name: "Legs",
       date: null,
       duration: null,
@@ -441,7 +441,7 @@ const Defaults = (function() {
       ]
     },
     ARMS_0: {
-      id: "routine_004",
+      id: "routine_011",
       name: "Arms & Shoulders",
       date: null,
       duration: null,
@@ -456,7 +456,7 @@ const Defaults = (function() {
       ]
     },
     CONDITION_0: {
-      id: "routine_005",
+      id: "routine_012",
       name: "Conditioning & Core",
       date: null,
       duration: null,

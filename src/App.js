@@ -12,7 +12,7 @@ import "./App.css";
 const App = () => {
   return (
     <AppState>
-      <Router basename='/#'>
+      <Router>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/about' component={About} />
