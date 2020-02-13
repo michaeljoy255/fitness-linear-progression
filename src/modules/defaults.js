@@ -387,9 +387,9 @@ const Defaults = (function() {
    * @todo This is a temp solution until CRUD operations are ready for routines
    */
   const Routine = {
-    CARDIO_DAY: {
-      id: "routine_001",
-      name: "Cardio Day",
+    CARDIO_0: {
+      id: "routine_000",
+      name: "Cardio",
       date: null,
       duration: null,
       exercise_ids: [
@@ -399,75 +399,70 @@ const Defaults = (function() {
         Exercise.STRETCHING.id
       ]
     },
-    CHEST_1: {
-      id: "routine_002",
-      name: "Chest, Shoulders, Triceps #1",
+    CHEST_0: {
+      id: "routine_001",
+      name: "Chest",
       date: null,
       duration: null,
       exercise_ids: [
+        Exercise.ELLIPTICAL.id,
         Exercise.FLAT_PIN_PRESS.id,
         Exercise.INCLINE_PIN_PRESS.id,
         Exercise.OVERHEAD_STRAIGHT_ARMS.id,
-        Exercise.FRONT_SIDE_RAISES.id,
-        Exercise.SKULL_CRUSHERS.id,
         Exercise.STRETCHING.id
       ]
     },
-    CHEST_2: {
-      id: "routine_003",
-      name: "Chest, Shoulders, Triceps #2",
+    BACK_0: {
+      id: "routine_002",
+      name: "Back",
       date: null,
       duration: null,
       exercise_ids: [
-        Exercise.FLAT_PIN_PRESS.id,
-        Exercise.DECLINE_PIN_PRESS.id,
-        Exercise.FLY_MACHINE_CHEST.id,
-        Exercise.FRONT_SIDE_RAISES.id,
-        Exercise.CABLE_TRICEP_PULLDOWNS.id,
-        Exercise.STRETCHING.id
-      ]
-    },
-    BACK_1: {
-      id: "routine_004",
-      name: "Back and Biceps #1",
-      date: null,
-      duration: null,
-      exercise_ids: [
+        Exercise.ELLIPTICAL.id,
         Exercise.BENT_OVER_ROWS.id,
         Exercise.STIFF_LEG_DEADLIFTS.id,
-        Exercise.SEATED_CABLE_PULLDOWNS.id,
-        Exercise.CABLE_UNDERHAND_CURLS.id,
-        Exercise.STRETCHING.id
-      ]
-    },
-    BACK_2: {
-      id: "routine_005",
-      name: "Back and Biceps #2",
-      date: null,
-      duration: null,
-      exercise_ids: [
         Exercise.SEATED_CABLE_ROWS.id,
-        Exercise.STANDING_T_ROWS.id,
-        Exercise.ASSISTED_PULL_UPS.id,
-        Exercise.DUMBBELL_HAMMER_CURLS.id,
         Exercise.STRETCHING.id
       ]
     },
-    LEGS_CORE: {
-      id: "routine_006",
-      name: "Legs and Core",
+    LEGS_0: {
+      id: "routine_003",
+      name: "Legs",
       date: null,
       duration: null,
       exercise_ids: [
-        Exercise.WEIGHTED_SQUATS.id,
+        Exercise.ELLIPTICAL.id,
         Exercise.LEG_PRESS_MACHINE.id,
         Exercise.LEG_EXT_MACHINE.id,
         Exercise.LEG_CURL_MACHINE.id,
         Exercise.CALF_EXT_MACHINE.id,
-        Exercise.HIP_THRUSTERS.id,
         Exercise.STANDING_GLUTE_MACHINE.id,
-        Exercise.HIP_ABDUCTION_MACHINE.id,
-        Exercise.HIP_ADDUCTION_MACHINE.id,
+        Exercise.STRETCHING.id
+      ]
+    },
+    ARMS_0: {
+      id: "routine_004",
+      name: "Arms & Shoulders",
+      date: null,
+      duration: null,
+      exercise_ids: [
+        Exercise.ELLIPTICAL.id,
+        Exercise.FRONT_SIDE_RAISES.id,
+        Exercise.CABLE_UNDERHAND_CURLS.id,
+        Exercise.SEATED_PREACHER_CURLS.id,
+        Exercise.CABLE_TRICEP_PULLDOWNS.id,
+        Exercise.TRICEP_PRESS.id,
+        Exercise.STRETCHING.id
+      ]
+    },
+    CONDITION_0: {
+      id: "routine_005",
+      name: "Conditioning & Core",
+      date: null,
+      duration: null,
+      exercise_ids: [
+        Exercise.STAIR_STEPPER.id,
+        Exercise.MISC_EXERCISE.id,
         Exercise.ABDOMINAL_CRUNCH_MACHINE.id,
         Exercise.OBLIQUE_SIDE_BEND.id,
         Exercise.STRETCHING.id
