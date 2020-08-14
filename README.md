@@ -1,10 +1,8 @@
 # Fitness Linear Progression
 
-This app has been part of an ongoing project to create, refactor, and recreate the same simple app in an effort to improve it and my programming ability.
+_NOTE: Archiving Summer 2020._
 
-```
-https://michaeljoy255.github.io/fitness-linear-progression/
-```
+This app has been part of an ongoing project to create, refactor, and recreate the same simple app in an effort to improve it and my programming ability.
 
 ---
 
